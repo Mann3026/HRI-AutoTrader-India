@@ -61,14 +61,15 @@ document.getElementById('userForm').addEventListener('submit', async (event) => 
     full_name: document.getElementById('fullName').value,
     username: document.getElementById('username').value,
     password: document.getElementById('password').value,
+    role: document.getElementById('userRole').value || 'USER',
   };
   try {
     const response = await fetch(API_BASE + '/users/register', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
     const result = await response.json();
     if (!response.ok) throw new Error(result.detail || 'Unable to create user');
-    showToast(`User created: ${result.username}`);
+    showToast(`✅ User created: ${result.username} (${result.role})`);
     document.getElementById('userForm').reset();
-  } catch (error) { showToast(error.message || 'User creation failed.'); }
+  } catch (error) { showToast('❌ ' + (error.message || 'User creation failed.')); }
 });
 
 document.getElementById('brokerForm').addEventListener('submit', async (event) => {
