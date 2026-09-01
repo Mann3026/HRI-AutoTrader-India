@@ -3,9 +3,9 @@ services:
     name: hri-autotrader
     runtime: python
     pythonVersion: 3.11
-    buildCommand: "pip install --upgrade pip && pip install -r backend/requirements.txt"
+    buildCommand: "cd backend && pip install --upgrade pip && pip install -r requirements.txt"
     startCommand: "python -m uvicorn backend.app:app --host 0.0.0.0 --port $PORT"
+    workingDirectory: backend
     envVars:
       - key: PYTHON_VERSION
         value: 3.11
-    staticPublishPath: ./frontend
