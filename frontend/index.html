@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HRI AutoTrader | Paper Desk</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .controls{margin-bottom:18px}.locked-tag{font:9px 'DM Mono',monospace;color:#a45d3c;background:#f8ebe6;padding:5px 7px}.control-grid{display:grid;grid-template-columns:1fr 1fr;column-gap:34px}.control-row{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:14px 0;border-top:1px solid #edf1ef}.control-row strong{display:block;font-size:11px}.control-row small{display:block;color:#879497;font:9px 'DM Mono',monospace;margin-top:4px}.switch,.small-action{flex:0 0 auto;border:1px solid #b8c9c4;background:#f4faf7;color:#397c5b;padding:6px 9px;font:9px 'DM Mono',monospace}.switch.disabled{background:#f5f5f2;border-color:#d9dfdc;color:#9ba3a2}.small-action{background:#fff5e4;border-color:#e1bd84;color:#9a612d}.switch.on{background:#e3f2e9}@media(max-width:900px){.control-grid{grid-template-columns:1fr}}
+  </style>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">H</span><div><strong>HRI</strong><small>AutoTrader India</small></div></div>
+      <div class="mode-pill"><span></span> PAPER MODE</div>
+      <nav>
+        <a class="active" href="#dashboard"><span>◈</span> Dashboard</a>
+        <a href="#scanner"><span>⌁</span> Market Scanner</a>
+        <a href="#signals"><span>◇</span> Signals</a>
+        <a href="#portfolio"><span>▣</span> Paper Portfolio</a>
+        <a href="#risk"><span>⊙</span> Risk Center</a>
+        <a href="#academy"><span>✦</span> Training Academy</a>
+        <a href="#controls"><span>⚙</span> Controls &amp; setup</a>
+      </nav>
+      <div class="sidebar-foot"><div class="health-dot"></div><div><strong>Systems healthy</strong><small>Last sync 09:42 IST</small></div></div>
+    </aside>
+    <main>
+      <header class="topbar"><div><p class="eyebrow">MONDAY · 31 AUG 2026</p><h1>Good morning, operator.</h1></div><div class="top-actions"><button class="icon-btn" aria-label="Notifications">♧<i></i></button><button class="avatar">HN</button></div></header>
+      <section class="notice"><span class="notice-icon">✓</span><div><strong>Paper trading is active</strong><p>Orders are simulated with virtual capital. Live trading is disabled.</p></div><button class="text-btn" id="killSwitch">Emergency stop</button></section>
+      <section class="metrics" id="dashboard">
+        <article class="metric-card primary"><div class="metric-label">Portfolio value <span>↗</span></div><strong>₹1,04,280</strong><div class="metric-change positive">+₹4,280 <small>+4.28% all time</small></div></article>
+        <article class="metric-card"><div class="metric-label">Today's P&amp;L <span>◷</span></div><strong>₹1,240</strong><div class="metric-change positive">+1.21% today</div></article>
+        <article class="metric-card"><div class="metric-label">Available cash <span>◌</span></div><strong>₹72,640</strong><div class="metric-change muted">29.9% exposed</div></article>
+        <article class="metric-card"><div class="metric-label">Drawdown <span>⌄</span></div><strong>1.8%</strong><div class="metric-change positive">Normal range</div></article>
+      </section>
+      <div class="content-grid">
+        <section class="panel chart-panel" id="portfolio"><div class="panel-head"><div><p class="eyebrow">EQUITY CURVE</p><h2>Portfolio performance</h2></div><div class="segmented"><button class="selected">1M</button><button>3M</button><button>6M</button><button>1Y</button></div></div><div class="chart-wrap"><div class="y-axis"><span>₹105k</span><span>₹100k</span><span>₹95k</span><span>₹90k</span></div><svg class="chart" viewBox="0 0 700 250" preserveAspectRatio="none" role="img" aria-label="Portfolio performance chart"><defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e2a44b" stop-opacity=".28"/><stop offset="1" stop-color="#e2a44b" stop-opacity="0"/></linearGradient></defs><path class="area" d="M0 210 C50 202 70 215 105 182 S165 190 200 158 S250 174 290 135 S345 150 380 119 S440 124 475 92 S525 112 560 68 S620 80 700 28 L700 250 L0 250Z"/><path class="line" d="M0 210 C50 202 70 215 105 182 S165 190 200 158 S250 174 290 135 S345 150 380 119 S440 124 475 92 S525 112 560 68 S620 80 700 28"/></svg></div><div class="chart-footer"><span><i class="legend"></i> Portfolio value</span><strong>₹1,04,280 <small>as of today</small></strong></div></section>
+        <section class="panel opportunities" id="scanner"><div class="panel-head"><div><p class="eyebrow">LIVE WATCH</p><h2>Active opportunities</h2></div><a href="#signals" class="view-all">View all →</a></div><div class="opportunity-list"><div class="opportunity"><div class="symbol-icon blue">R</div><div class="opportunity-name"><strong>RELIANCE</strong><small>Breakout · Large cap</small></div><div class="score"><strong>86</strong><small>STRONG</small></div><div class="spark up">╱╲╱╱</div></div><div class="opportunity"><div class="symbol-icon red">T</div><div class="opportunity-name"><strong>TCS</strong><small>Momentum · IT</small></div><div class="score"><strong>79</strong><small>STRONG</small></div><div class="spark up">╱╱╲╱</div></div><div class="opportunity"><div class="symbol-icon green">H</div><div class="opportunity-name"><strong>HDFCBANK</strong><small>Trend · Banking</small></div><div class="score"><strong>74</strong><small>WEAK</small></div><div class="spark flat">╱╲╱╲</div></div></div></section>
+      </div>
+      <div class="bottom-grid"><section class="panel signals" id="signals"><div class="panel-head"><div><p class="eyebrow">SIGNAL ENGINE</p><h2>Latest signals</h2></div><span class="live-tag"><i></i> LIVE DATA</span></div><div class="table"><div class="table-row table-header"><span>Instrument</span><span>Direction</span><span>Score</span><span>Entry / stop</span><span></span></div><div class="table-row"><span><strong>RELIANCE</strong><small>NSE · 5 min</small></span><span class="buy">BUY</span><span class="score-number">86<span>/100</span></span><span>₹1,462 / ₹1,438</span><button class="why">Why this signal →</button></div><div class="table-row"><span><strong>TCS</strong><small>NSE · 15 min</small></span><span class="buy">BUY</span><span class="score-number">79<span>/100</span></span><span>₹3,124 / ₹3,075</span><button class="why">Why this signal →</button></div></div></section><section class="panel risk" id="risk"><div class="panel-head"><div><p class="eyebrow">RISK CENTER</p><h2>Within guardrails</h2></div><span class="risk-badge">NORMAL</span></div><div class="risk-item"><span>Daily loss limit</span><strong>₹1,240 <small>/ ₹1,500</small></strong><div class="progress"><i style="width:82%"></i></div></div><div class="risk-item"><span>Portfolio exposure</span><strong>29.9% <small>/ 60%</small></strong><div class="progress"><i style="width:50%"></i></div></div><div class="risk-item"><span>Trades today</span><strong>2 <small>/ 5</small></strong><div class="progress"><i style="width:40%"></i></div></div><button class="outline-btn" id="tradeBtn">Simulate paper order</button></section></div>
+      <section class="panel controls" id="controls"><div class="panel-head"><div><p class="eyebrow">ACCOUNT &amp; AUTOMATION</p><h2>Controls &amp; setup</h2></div><span class="locked-tag">LIVE LOCKED</span></div><div class="control-grid"><div class="control-row"><div><strong>Real-money trading</strong><small>Requires broker API, verification, and safety review before activation.</small></div><button class="switch disabled" data-setting="Real-money trading" disabled>OFF</button></div><div class="control-row"><div><strong>Paper trading</strong><small>Uses virtual capital and simulated fills.</small></div><button class="switch on" data-setting="Paper trading">ENABLED</button></div><div class="control-row"><div><strong>Virtual capital</strong><small>Starting balance: ₹1,00,000</small></div><button class="small-action" data-setting="Virtual capital">Change</button></div><div class="control-row"><div><strong>Risk / reward minimum</strong><small>Current minimum: 1 : 2.0</small></div><button class="small-action" data-setting="Risk / reward ratio">Change</button></div><div class="control-row"><div><strong>Daily P&amp;L report</strong><small>Orders, investments, profits, losses, and charges.</small></div><button class="small-action" data-setting="Daily P&amp;L report">Generate</button></div><div class="control-row"><div><strong>Signal source</strong><small>Select a free or paid feed. No live execution is enabled yet.</small></div><div style="display:flex; gap:8px; flex-wrap:wrap;"><button class="switch on" id="signalFreeBtn" data-signal-mode="FREE">FREE</button><button class="switch disabled" id="signalPaidBtn" data-signal-mode="PAID">PAID</button></div></div><div class="control-row"><div><strong>Demat / broker connection</strong><small>Broker and Demat setup is visible, but not active until manual approval.</small></div><button class="switch disabled" data-setting="Demat / broker connection" disabled>NOT CONNECTED</button></div><div class="control-row"><div><strong>Live broker credentials</strong><small>API keys and account setup remain disabled until your review is complete.</small></div><button class="switch disabled" data-setting="Live broker credentials" disabled>LOCKED</button></div></div><div class="control-grid" style="margin-top:20px;"><div class="control-row" style="display:block; border-top:1px solid #edf1ef; padding-top:18px;"><h3 style="margin:0 0 12px; font-size:13px;">Signal provider configuration</h3><form id="signalForm" style="display:grid; gap:10px; max-width:420px;"><select id="signalMode" style="padding:10px; border:1px solid #dfe7e4; border-radius:6px;"><option value="FREE">Free signal mode</option><option value="PAID">Paid signal mode</option></select><input type="text" id="signalProvider" placeholder="Provider name (for example: Yahoo Finance / Paid API)" style="padding:10px; border:1px solid #dfe7e4; border-radius:6px;" /><input type="text" id="signalApiKey" placeholder="API key for paid signal source" style="padding:10px; border:1px solid #dfe7e4; border-radius:6px;" /><input type="text" id="signalNotes" placeholder="Notes for this signal configuration" style="padding:10px; border:1px solid #dfe7e4; border-radius:6px;" /><button type="submit" class="small-action">Save signal source</button></form></div></div><div class="control-grid" style="margin-top:20px;">
+        <div class="control-row" style="display:block; border-top:1px solid #edf1ef; padding-top:18px;">
+          <h3 style="margin:0 0 12px; font-size:13px;">Investor setup</h3>
+          <form id="userForm" style="display:grid; gap:10px; max-width:420px;">
+            <input type="text" id="fullName" placeholder="Full name" style="padding:10px; border:1px solid #dfe7e4; border-radius:6px;" />
+            <input type="text" id="username" placeholder="Username" style="padding:10px; border:1px solid #dfe7e4; border-radius:6px;" />
+            <input type="password" id="password" placeholder="Password" style="padding:10px; border:1px solid #dfe7e4; border-radius:6px;" />
+            <button type="submit" class="small-action">Create user</button>
+          </form>
+        </div>
+        <div class="control-row" style="display:block; border-top:1px solid #edf1ef; padding-top:18px;">
+          <h3 style="margin:0 0 12px; font-size:13px;">Broker / Demat connection</h3>
+          <form id="brokerForm" style="display:grid; gap:10px; max-width:420px;">
+            <input type="text" id="brokerName" placeholder="Broker name" style="padding:10px; border:1px solid #dfe7e4; border-radius:6px;" />
+            <input type="text" id="brokerApiKey" placeholder="API key" style="padding:10px; border:1px solid #dfe7e4; border-radius:6px;" />
+            <input type="text" id="brokerApiSecret" placeholder="API secret" style="padding:10px; border:1px solid #dfe7e4; border-radius:6px;" />
+            <input type="text" id="dematAccount" placeholder="Demat account" style="padding:10px; border:1px solid #dfe7e4; border-radius:6px;" />
+            <input type="text" id="accountNumber" placeholder="Account number" style="padding:10px; border:1px solid #dfe7e4; border-radius:6px;" />
+            <button type="submit" class="small-action">Connect account</button>
+          </form>
+        </div>
+        <div class="control-row" style="display:block; border-top:1px solid #edf1ef; padding-top:18px;">
+          <h3 style="margin:0 0 12px; font-size:13px;">Real-money trading control</h3>
+          <div style="background:#f8ebe6; border:1px solid #d9b8a8; border-radius:6px; padding:12px; margin-bottom:12px;">
+            <p style="margin:0 0 8px; font-size:12px; color:#5a3a2a;"><strong>⚠ Warning:</strong> Real-money trading is disabled by design for safety. Enable only after:</p>
+            <ul style="margin:0; padding-left:18px; font-size:11px; color:#5a3a2a;">
+              <li>Testing strategy extensively in paper trading</li>
+              <li>Reviewing all broker APIs and credentials</li>
+              <li>Understanding your risk tolerance</li>
+              <li>Confirming Demat account connection</li>
+            </ul>
+          </div>
+          <form id="liveTradeForm" style="display:grid; gap:10px; max-width:420px;">
+            <label style="display:flex; align-items:center; gap:8px; font-size:12px;">
+              <input type="checkbox" id="realMoneyAcknowledge" style="width:16px; height:16px; cursor:pointer;" />
+              <span>I understand the risks and accept responsibility for any losses</span>
+            </label>
+            <input type="text" id="liveTradeCode" placeholder='Enter code: ENABLE-LIVE-TRADING' style="padding:10px; border:1px solid #dfe7e4; border-radius:6px; font-size:11px;" />
+            <button type="submit" class="small-action" id="liveTradeSubmit" disabled>Enable real-money trading</button>
+            <small id="liveTradeStatus" style="color:#879497; font-size:10px;"></small>
+          </form>
+        </div>
+      </div></section>
+      <footer>HRI AutoTrader <span>•</span> Paper environment <span>•</span> Data is for simulation and education, not investment advice.</footer>
+    </main>
+  </div>
+  <div class="toast" id="toast"></div>
+</body>
+</html>
